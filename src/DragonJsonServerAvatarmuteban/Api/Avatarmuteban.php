@@ -19,8 +19,8 @@ class Avatarmuteban
 	/**
 	 * Gibt den Avatarmutebann für den aktuellen Avatar zurück
 	 * @return array|null
-	 * @session
-	 * @avatar
+	 * @DragonJsonServerAccount\Annotation\Session
+	 * @DragonJsonServerAvatar\Annotation\Avatar
 	 */
 	public function getAvatarmuteban()
 	{
