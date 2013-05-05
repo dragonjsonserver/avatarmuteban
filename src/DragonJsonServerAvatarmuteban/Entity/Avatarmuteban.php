@@ -51,6 +51,16 @@ class Avatarmuteban
 	}
 	
 	/**
+	 * Setzt den Endzeitpunkt des Avatarmutebanns als Unix Timestamp
+	 * @param integer $end
+	 */
+	public function setEndTimestamp($end)
+	{
+		$this->setEnd((new \DateTime())->setTimestamp($end));
+		return $this;
+	}
+	
+	/**
 	 * Gibt den Endzeitpunkt des Avatarmutebanns zurück
 	 * @return \DateTime
 	 */
