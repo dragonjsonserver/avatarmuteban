@@ -47,7 +47,7 @@ class Module
     public function init(\Zend\ModuleManager\ModuleManager $moduleManager)
     {
     	$sharedManager = $moduleManager->getEventManager()->getSharedManager();
-    	$sharedManager->attach('DragonJsonServerAvatarmessage\Service\Avatarmessage', 'createavatarmessage', 
+    	$sharedManager->attach('DragonJsonServerAvatarmessage\Service\Avatarmessage', 'CreateAvatarmessage', 
 	    	function (\DragonJsonServerAvatarmessage\Event\CreateAvatarmessage $eventCreateAvatarmessage) {
 	    		$from_avatar = $eventCreateAvatarmessage->getAvatarmessage()->getFromAvatar();
 	    		if (null === $from_avatar) {

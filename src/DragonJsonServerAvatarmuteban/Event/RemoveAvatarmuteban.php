@@ -17,7 +17,7 @@ class RemoveAvatarmuteban extends \Zend\EventManager\Event
 	/**
 	 * @var string
 	 */
-	protected $name = 'removeavatarmuteban';
+	protected $name = 'RemoveAvatarmuteban';
 
     /**
      * Setzt den Avatarmutebann der entfernt wird

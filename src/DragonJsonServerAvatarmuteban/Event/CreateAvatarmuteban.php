@@ -17,7 +17,7 @@ class CreateAvatarmuteban extends \Zend\EventManager\Event
 	/**
 	 * @var string
 	 */
-	protected $name = 'createavatarmuteban';
+	protected $name = 'CreateAvatarmuteban';
 
     /**
      * Setzt den Avatarmutebann der erstellt wurde
