@@ -66,7 +66,7 @@ class Avatarmuteban
 	}
 	
 	/**
-	 * Gibt den aktuellen Avatarmutebann für den Avatar zurück
+	 * Gibt den aktuellen Avatarmutebann für die AvatarID zurück
 	 * @param integer $avatar_id
 	 * @param boolean $throwException
 	 * @return \DragonJsonServerAvatarmuteban\Entity\Avatarmuteban|null
