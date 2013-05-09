@@ -61,5 +61,15 @@ class Module
 	    		throw new \DragonJsonServer\Exception('avatarmuteban', ['avatarmuteban' => $avatarmuteban->toArray()]);
 	    	}
     	);
+    	$sharedManager->attach('DragonJsonServerAvatar\Service\Avatar', 'RemoveAvatar', 
+	    	function (\DragonJsonServerAvatar\Event\RemoveAvatar $eventRemoveAvatar) {
+	    		$serviceAvatarmuteban = $this->getServiceManager()->get('Avatarmuteban');
+	    		$avatarmuteban = $serviceAvatarmuteban->getAvatarmutebanByAvatarId($eventRemoveAvatar->getAvatar()->getAvatarId(), false);
+	    		if (null === $avatarmuteban) {
+	    			return;
+	    		}
+	    		$serviceAvatarmuteban->removeAvatarmuteban($avatarmuteban);
+	    	}
+    	);
     }
 }
