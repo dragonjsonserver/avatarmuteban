@@ -89,6 +89,7 @@ class Avatarmuteban
 	public function toArray()
 	{
 		return [
+			'entity' => 'Avatarmuteban',
 			'avatarmuteban_id' => $this->getAvatarmutebanId(),
 			'created' => $this->getCreatedTimestamp(),
 			'avatar_id' => $this->getAvatarId(),
