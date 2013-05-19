@@ -53,7 +53,7 @@ class Module
 	    		if (null === $from_avatar) {
 	    			return;
 	    		}
-	    		$serviceAvatarmuteban = $this->getServiceManager()->get('Avatarmuteban');
+	    		$serviceAvatarmuteban = $this->getServiceManager()->get('\DragonJsonServerAvatarmuteban\Service\Avatarmuteban');
 	    		$avatarmuteban = $serviceAvatarmuteban->getAvatarmutebanByAvatarId($from_avatar->getAvatarId(), false);
 	    		if (null === $avatarmuteban) {
 	    			return;
@@ -63,7 +63,7 @@ class Module
     	);
     	$sharedManager->attach('DragonJsonServerAvatar\Service\Avatar', 'RemoveAvatar', 
 	    	function (\DragonJsonServerAvatar\Event\RemoveAvatar $eventRemoveAvatar) {
-	    		$serviceAvatarmuteban = $this->getServiceManager()->get('Avatarmuteban');
+	    		$serviceAvatarmuteban = $this->getServiceManager()->get('\DragonJsonServerAvatarmuteban\Service\Avatarmuteban');
 	    		$avatarmuteban = $serviceAvatarmuteban->getAvatarmutebanByAvatarId($eventRemoveAvatar->getAvatar()->getAvatarId(), false);
 	    		if (null === $avatarmuteban) {
 	    			return;

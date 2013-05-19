@@ -26,8 +26,8 @@ class Avatarmuteban
 	{
 		$serviceManager = $this->getServiceManager();
 
-		$avatar = $serviceManager->get('Avatar')->getAvatar();
-		$avatarmuteban = $serviceManager->get('Avatarmuteban')->getAvatarmutebanByAvatarId($avatar->getAvatarId(), false);
+		$avatar = $serviceManager->get('\DragonJsonServerAvatar\Service\Avatar')->getAvatar();
+		$avatarmuteban = $serviceManager->get('\DragonJsonServerAvatarmuteban\Service\Avatarmuteban')->getAvatarmutebanByAvatarId($avatar->getAvatarId(), false);
 		if (null !== $avatarmuteban) {
 			$avatarmuteban = $avatarmuteban->toArray();
 		}

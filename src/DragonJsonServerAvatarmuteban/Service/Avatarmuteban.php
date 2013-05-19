@@ -35,7 +35,7 @@ class Avatarmuteban
 		} else {
 			$avatarmuteban->setEnd($end);
 		}
-		$this->getServiceManager()->get('Doctrine')->transactional(function ($entityManager) use ($avatarmuteban) {
+		$this->getServiceManager()->get('\DragonJsonServerDoctrine\Service\Doctrine')->transactional(function ($entityManager) use ($avatarmuteban) {
 			$entityManager->persist($avatarmuteban);
 			$entityManager->flush();
 			$this->getEventManager()->trigger(
@@ -54,7 +54,7 @@ class Avatarmuteban
 	 */
 	public function removeAvatarmuteban(\DragonJsonServerAvatarmuteban\Entity\Avatarmuteban $avatarmuteban)
 	{
-		$this->getServiceManager()->get('Doctrine')->transactional(function ($entityManager) use ($avatarmuteban) {
+		$this->getServiceManager()->get('\DragonJsonServerDoctrine\Service\Doctrine')->transactional(function ($entityManager) use ($avatarmuteban) {
 			$this->getEventManager()->trigger(
 				(new \DragonJsonServerAvatarmuteban\Event\RemoveAvatarmuteban())
 					->setTarget($this)
